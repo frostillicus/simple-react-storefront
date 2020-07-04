@@ -1,12 +1,23 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import numeral from "numeral";
 import { StoreContext } from "../context/store-context";
 import ProductGrid from "./ProductGrid";
 
 const ProductPage = props => {
   const productId = props.match.params.id;
-  const { setShowCart, cartDispatch, productDB } = useContext(StoreContext);
+  const {
+    setShowCart,
+    cartDispatch,
+    likes,
+    likesDispatch,
+    productDB
+  } = useContext(StoreContext);
   const product = productDB.filter(item => item.id === productId)[0];
+
+  useEffect(() => {
+    document.title = `${product.name} | StoreCo`;
+  });
+
   const handleAddToCart = id => {
     setShowCart(true);
     cartDispatch({
@@ -16,6 +27,13 @@ const ProductPage = props => {
     window.scrollTo({
       top: 0,
       behavior: "smooth"
+    });
+  };
+
+  const handleToggleLike = () => {
+    likesDispatch({
+      type: "TOGGLE_LIKE",
+      id: productId
     });
   };
 
@@ -53,9 +71,12 @@ const ProductPage = props => {
               >
                 Add to cart
               </button>
-              <button className="sm:mt-3 md:mt-0 rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
+              <button
+                onClick={() => handleToggleLike()}
+                className="sm:mt-3 md:mt-0 rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4 focus:outline-none"
+              >
                 <svg
-                  fill="currentColor"
+                  fill={likes.includes(productId) ? "#f56565" : "gray"}
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"

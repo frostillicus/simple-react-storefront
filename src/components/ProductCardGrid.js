@@ -22,17 +22,12 @@ const ProductGrid = ({
     return (
       <div>
         {headerText && <p className="big-display-text">{headerText}</p>}
-        <div
-          className="grid-smart grid-auto grid-gap-15"
-          style={{
-            gridTemplateColumns: `repeat(auto-fill, minmax(${columnSize}px, 1fr))`
-          }}
-        >
+        <div className="">
           {cutDB
             .filter(product => !exclude.includes(product.id))
             .slice(0, numProducts)
             .map(product => (
-              <div className="mb-4" key={product.id}>
+              <div className="mb-8" key={product.id}>
                 <ProductCardH product={product} />
               </div>
             ))}

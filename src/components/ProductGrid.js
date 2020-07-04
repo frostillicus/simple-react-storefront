@@ -35,7 +35,7 @@ const ProductGrid = ({
               <Link key={product.id} to={`/product/${product.id}`}>
                 <figure className="aspect--square">
                   <img
-                    className="aspect__child"
+                    className="aspect__child rounded border border-gray-200"
                     src={product.image}
                     alt={product.name}
                   />

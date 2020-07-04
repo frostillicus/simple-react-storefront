@@ -9,12 +9,17 @@ module.exports = {
       center: true
     },
     screens: {
-      'sm': '540px',
-      'md': '768px',
-      'lg': '1024px',
-      'xl': '1280px',
+      xs: "400px",
+      sm: "540px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px"
     },
-    extend: {}
+    extend: {
+      colors: {
+        "brand-blue": "#506faf"
+      }
+    }
   },
   variants: {},
   plugins: []

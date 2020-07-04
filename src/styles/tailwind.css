@@ -196,15 +196,8 @@ blockquote {
   max-width: 500px;
 }
 
-@media (min-width: 1285px) {
+@media (min-width: 1280px) {
   .product-grid--xl-enlarge .grid-smart a:first-child {
-    grid-row: auto / span 2;
-    grid-column: auto / span 2;
-  }
-}
-
-@media (min-width: 1514px) {
-  .product-grid--xl-enlarge .grid-smart a:nth-child(8) {
     grid-row: auto / span 2;
     grid-column: auto / span 2;
   }

@@ -7,20 +7,22 @@ const Header = () => {
   const numCartItems = cart.reduce((total, item) => total + item.quantity, 0);
 
   return (
-    <header className="bg-purple-200">
-      <div className="container lg:w-4/5 py-4 px-5 lg:px-16 flex justify-between">
-        <div className="hover:text-gray-700">
-          <Link className="text-lg" to="/">
-            Home
-          </Link>
-        </div>
-        <div>
-          <button
-            onClick={() => setShowCart(showCart => !showCart)}
-            className="focus:outline-none text-lg hover:text-gray-700"
-          >
-            Cart ({numCartItems} items)
-          </button>
+    <header className="text-gray-100 bg-brand-blue">
+      <div className="container">
+        <div className="lg:w-4/5 mx-auto py-4 px-5 flex justify-between">
+          <div className="hover:text-gray-300">
+            <Link className="text-lg" to="/">
+              StoreCo
+            </Link>
+          </div>
+          <div>
+            <button
+              onClick={() => setShowCart(showCart => !showCart)}
+              className="focus:outline-none text-lg hover:text-gray-300"
+            >
+              Cart ({numCartItems} items)
+            </button>
+          </div>
         </div>
       </div>
     </header>

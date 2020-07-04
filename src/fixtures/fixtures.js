@@ -125,5 +125,7 @@ export const productDB = [
 export const initCart = [
   { id: "1870298434", quantity: 2 },
   { id: "2364928764", quantity: 1 },
-  { id: "479234872", quantity: 1 }
+  { id: "379587345", quantity: 1 }
 ];
+
+export const testLikes = ["1870298434", "2364928764", "479234872"];

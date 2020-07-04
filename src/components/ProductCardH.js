@@ -6,19 +6,19 @@ import { truncate } from "../utils/utils";
 
 const ProductCardH = ({ product }) => {
   return (
-    <article className="flex">
+    <article className="flex flex-col xs:flex-row">
       <div className="flex-none w-32">
         <Link to={`/product/${product.id}`}>
           <figure className="aspect--square">
             <img
-              className="aspect__child"
+              className="aspect__child rounded border border-gray-200"
               src={product.image}
               alt={product.name}
             />
           </figure>
         </Link>
       </div>
-      <div className="flex flex-col justify-between ml-6">
+      <div className="flex flex-col justify-between mt-3 xs:mt-0 xs:ml-6">
         <div>
           <p className="text-gray-900 text-xl title-font font-medium -mt-1 mb-2">
             {truncate(product.name, 60)}

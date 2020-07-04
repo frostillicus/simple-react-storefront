@@ -6,6 +6,7 @@ import StartPage from "../components/StartPage";
 import ProductPage from "../components/ProductPage";
 import CartPage from "../components/CartPage";
 import CartMenu from "../components/CartMenu";
+import ThankYouPage from "../components/ThankYouPage";
 import Slide from "../components/Slide";
 import ScrollToTop from "../components/ScrollToTop";
 import { StoreContext } from "../context/store-context";
@@ -27,6 +28,7 @@ const AppRouter = () => {
           <Switch>
             <Route path="/" component={StartPage} exact={true} />
             <Route path="/cart" component={CartPage} />
+            <Route path="/thankyou" component={ThankYouPage} />
             <Route path="/product/:id" component={ProductPage} />
           </Switch>
         </div>

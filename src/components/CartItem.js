@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import numeral from "numeral";
 import { StoreContext } from "../context/store-context";
+import { truncate } from "../utils/utils";
 
-const CartItem = ({ product }) => {
+const CartItem = ({ product, nameTrunc = 100 }) => {
   const { setShowCart, cartDispatch } = useContext(StoreContext);
   const handleIncItem = id => {
     cartDispatch({
@@ -24,23 +25,31 @@ const CartItem = ({ product }) => {
     });
   };
 
-  const truncName =
-    product.name.length > 48 ? product.name.slice(0, 48) + "..." : product.name;
+  useEffect(() => {
+    if (product.quantity === 0) {
+      cartDispatch({
+        type: "DELETE_ITEM",
+        id: product.id
+      });
+    }
+  }, []);
 
   return (
     <div className="flex items-center my-4">
-      <Link to={`/product/${product.id}`} className="flex-none">
-        <figure className="mr-4">
-          <img
-            onClick={() => setShowCart(false)}
-            className="h-16 w-16 object-cover"
-            src={product.image}
-            alt={product.name}
-          />
-        </figure>
-      </Link>
+      <div className="flex-none hidden xs:block">
+        <Link to={`/product/${product.id}`}>
+          <figure className="mr-4">
+            <img
+              onClick={() => setShowCart(false)}
+              className="h-16 w-16 object-cover rounded border border-gray-200"
+              src={product.image}
+              alt={product.name}
+            />
+          </figure>
+        </Link>
+      </div>
       <div className="mr-4">
-        <p className="text-lg">{truncName}</p>
+        <p className="text-lg">{truncate(product.name, nameTrunc)}</p>
         <div className="text-sm flex flex-wrap items-center">
           <div className="mt-1">
             <button
@@ -50,7 +59,7 @@ const CartItem = ({ product }) => {
               Delete
             </button>
           </div>
-          <div className="flex flex-no-wrap mt-1">
+          <div className="flex flex-no-wrap items-center mt-1">
             <span className="mr-1">Quantity: </span>
             <button
               className="border px-2"
@@ -58,7 +67,7 @@ const CartItem = ({ product }) => {
             >
               -
             </button>
-            <div className="mx-1 font-mono">{product.quantity}</div>
+            <div className="mx-1 font-mono mt-1">{product.quantity}</div>
             <button
               className="border px-2"
               onClick={() => handleIncItem(product.id)}

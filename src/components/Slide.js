@@ -19,7 +19,7 @@ const Slide = ({ showCart, children }) => {
         style={{
           zIndex: "1000",
           position: "relative",
-          animation: `${showCart ? "slideIn" : "slideOut"} 0.6s`
+          animation: `${showCart ? "slideIn" : "slideOut"} 0.5s`
         }}
         onAnimationEnd={onAnimationEnd}
       >
