@@ -17,7 +17,7 @@ const AppRouter = () => {
   const { showCart } = useContext(StoreContext);
 
   return (
-    <Router history={history}>
+    <Router basename={process.env.PUBLIC_URL} history={history}>
       <ScrollToTop />
       <div>
         <Header />
@@ -26,10 +26,23 @@ const AppRouter = () => {
         </Slide>
         <div>
           <Switch>
-            <Route path="/" component={StartPage} exact={true} />
-            <Route path="/cart" component={CartPage} />
-            <Route path="/thankyou" component={ThankYouPage} />
-            <Route path="/product/:id" component={ProductPage} />
+            <Route
+              path={`${process.env.PUBLIC_URL}/`}
+              component={StartPage}
+              exact={true}
+            />
+            <Route
+              path={`${process.env.PUBLIC_URL}/cart`}
+              component={CartPage}
+            />
+            <Route
+              path={`${process.env.PUBLIC_URL}/thankyou`}
+              component={ThankYouPage}
+            />
+            <Route
+              path={`${process.env.PUBLIC_URL}/product/:id`}
+              component={ProductPage}
+            />
           </Switch>
         </div>
       </div>

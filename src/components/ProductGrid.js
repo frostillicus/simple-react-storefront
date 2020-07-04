@@ -32,7 +32,10 @@ const ProductGrid = ({
             .filter(product => !exclude.includes(product.id))
             .slice(0, numProducts)
             .map(product => (
-              <Link key={product.id} to={`/product/${product.id}`}>
+              <Link
+                key={product.id}
+                to={`${process.env.PUBLIC_URL}/product/${product.id}`}
+              >
                 <figure className="aspect--square">
                   <img
                     className="aspect__child rounded border border-gray-200"

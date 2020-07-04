@@ -11,7 +11,7 @@ const Header = () => {
       <div className="container">
         <div className="lg:w-4/5 mx-auto py-4 px-5 flex justify-between">
           <div className="hover:text-gray-300">
-            <Link className="text-lg" to="/">
+            <Link className="text-lg" to={`${process.env.PUBLIC_URL}/`}>
               StoreCo
             </Link>
           </div>

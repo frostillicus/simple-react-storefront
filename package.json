@@ -1,6 +1,6 @@
 {
   "name": "simple-react-storefront",
-  "homepage": "https://frostillicus.github.io/simple-react-storefront/",
+  "homepage": "https://frostillicus.github.io/simple-react-storefront",
   "version": "0.9.0",
   "private": "true",
   "dependencies": {

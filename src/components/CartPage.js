@@ -32,7 +32,7 @@ const CartPage = () => {
     cartDispatch({
       type: "EMPTY_CART"
     });
-    history.push("/thankyou");
+    history.push(`${process.env.PUBLIC_URL}/thankyou`);
   };
 
   return (

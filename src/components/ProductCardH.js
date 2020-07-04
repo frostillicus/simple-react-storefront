@@ -8,7 +8,7 @@ const ProductCardH = ({ product }) => {
   return (
     <article className="flex flex-col xs:flex-row">
       <div className="flex-none w-32">
-        <Link to={`/product/${product.id}`}>
+        <Link to={`${process.env.PUBLIC_URL}/product/${product.id}`}>
           <figure className="aspect--square">
             <img
               className="aspect__child rounded border border-gray-200"

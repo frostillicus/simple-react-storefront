@@ -46,7 +46,7 @@ const CartMenu = () => {
               </p>
               <Link
                 onClick={() => setShowCart(showCart => !showCart)}
-                to={"/cart"}
+                to={`${process.env.PUBLIC_URL}/cart`}
                 className="btn btn--primary my-4"
               >
                 Go to cart

@@ -37,7 +37,7 @@ const CartItem = ({ product, nameTrunc = 100 }) => {
   return (
     <div className="flex items-center my-4">
       <div className="flex-none hidden xs:block">
-        <Link to={`/product/${product.id}`}>
+        <Link to={`${process.env.PUBLIC_URL}/product/${product.id}`}>
           <figure className="mr-4">
             <img
               onClick={() => setShowCart(false)}
