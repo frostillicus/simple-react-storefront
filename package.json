@@ -1,6 +1,6 @@
 {
-  "name": "store-checkout",
-  "version": "0.1.0",
+  "name": "simple-react-storefront",
+  "version": "0.9.0",
   "private": "true",
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^2.3.0",
