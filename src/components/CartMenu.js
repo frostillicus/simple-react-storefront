@@ -23,8 +23,7 @@ const CartMenu = () => {
     <div>
       <section
         onClick={() => setShowCart(false)}
-        className="absolute top-0 right-0 w-full h-screen"
-      ></section>
+        className="absolute top-0 right-0 w-full h-screen"></section>
       <section className="cart-menu__wrapper absolute top-0 right-0 w-full p-8 lg:p-12 bg-gray-100 border-l border-b border-gray-200 z-50 rounded-bl">
         <div className="flex flex-col">
           {!hasItems && (
@@ -46,9 +45,8 @@ const CartMenu = () => {
               </p>
               <Link
                 onClick={() => setShowCart(showCart => !showCart)}
-                to={`${process.env.PUBLIC_URL}/cart`}
-                className="btn btn--primary my-4"
-              >
+                to={"/cart"}
+                className="btn btn--primary my-4">
                 Go to cart
               </Link>
             </div>

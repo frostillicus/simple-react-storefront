@@ -11,15 +11,14 @@ const Header = () => {
       <div className="container">
         <div className="lg:w-4/5 mx-auto py-4 px-5 flex justify-between">
           <div className="hover:text-gray-300">
-            <Link className="text-lg" to={`${process.env.PUBLIC_URL}/`}>
+            <Link className="text-lg" to={"/"}>
               StoreCo
             </Link>
           </div>
           <div>
             <button
               onClick={() => setShowCart(showCart => !showCart)}
-              className="focus:outline-none text-lg hover:text-gray-300"
-            >
+              className="focus:outline-none text-lg hover:text-gray-300">
               Cart ({numCartItems} items)
             </button>
           </div>

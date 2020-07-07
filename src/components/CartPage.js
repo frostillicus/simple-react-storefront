@@ -32,7 +32,7 @@ const CartPage = () => {
     cartDispatch({
       type: "EMPTY_CART"
     });
-    history.push(`${process.env.PUBLIC_URL}/thankyou`);
+    history.push("/thankyou");
   };
 
   return (
@@ -60,8 +60,7 @@ const CartPage = () => {
                 </p>
                 <button
                   onClick={handleConfirmOrder}
-                  className="btn btn--primary my-4"
-                >
+                  className="btn btn--primary my-4">
                   Confirm Order
                 </button>
               </div>
