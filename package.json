@@ -30,7 +30,8 @@
   "scripts": {
     "build:tailwind": "postcss src/styles/tailwind.css -o src/styles/tailwind.generated.css",
     "watch:tailwind": "postcss -w src/styles/tailwind.css -o src/styles/tailwind.generated.css",
-    "start": "run-p watch:tailwind start:react",
+    "dev": "run-p watch:tailwind start:react",
+    "start": "node server/server.js",
     "start:react": "react-scripts start",
     "prebuild": "NODE_ENV=production npm run build:tailwind",
     "build": "react-scripts build",
