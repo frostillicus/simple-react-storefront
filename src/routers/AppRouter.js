@@ -10,6 +10,7 @@ import ThankYouPage from "../components/ThankYouPage";
 import Slide from "../components/Slide";
 import ScrollToTop from "../components/ScrollToTop";
 import { StoreContext } from "../context/store-context";
+import NotFoundPage from "../components/NotFoundPage";
 
 export const history = createHistory();
 
@@ -33,6 +34,7 @@ const AppRouter = () => {
             />
             <Route path={"/thankyou"} component={ThankYouPage} />
             <Route path={"/product/:id"} component={ProductPage} />
+            <Route component={NotFoundPage} />
           </Switch>
         </div>
       </div>

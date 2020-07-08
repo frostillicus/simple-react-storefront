@@ -1,9 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import ProductGrid from "./ProductGrid";
 import { StoreContext } from "../context/store-context";
 
 const ThankYouPage = () => {
   const { oldCart } = useContext(StoreContext);
+
+  useEffect(() => {
+    document.title = `Thank You! | StoreCo`;
+  });
 
   return (
     <section className="container px-8 py-12 md:py-20">
