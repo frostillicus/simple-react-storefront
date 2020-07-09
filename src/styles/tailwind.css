@@ -203,6 +203,12 @@ blockquote {
   }
 }
 
+@media (min-width: 1336px) {
+  .cart-menu__wrapper {
+    right: calc(50vw - 668px);
+  }
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -223,7 +229,7 @@ blockquote {
 
 @keyframes slideIn {
   0% {
-    transform: translateX(50%);
+    transform: translateX(500px);
     opacity: 0;
   }
   100% {
@@ -238,7 +244,7 @@ blockquote {
     opacity: 1;
   }
   100% {
-    transform: translateX(50%);
+    transform: translateX(500px);
     opacity: 0;
   }
 }

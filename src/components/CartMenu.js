@@ -44,7 +44,7 @@ const CartMenu = () => {
                 {numeral(subTotal / 100).format("$0,0.00")}
               </p>
               <Link
-                onClick={() => setShowCart(showCart => !showCart)}
+                onClick={() => setShowCart(false)}
                 to={"/cart"}
                 className="btn btn--primary my-4">
                 Go to cart
